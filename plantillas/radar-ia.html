@@ -1,0 +1,95 @@
+<title>Radar IA diario</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Source+Sans+3:wght@400;600&display=swap">
+<style>
+/* Layout: una columna de lectura, cuatro bloques en orden fijo España → Europa → Mundo → RRHH */
+:root {
+  --bg: #f6f7f9; --surface: #ffffff; --fg: #1b2230; --muted: #5b6577; --line: #e2e6ec;
+  --link: #1f5fbf;
+  --es: #c0392b; --eu: #2353b8; --mundo: #0e7a6c; --rrhh: #7a3fc4;
+  --display: "Fraunces", Georgia, serif;
+  --body: "Source Sans 3", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #12161d; --surface: #1a2029; --fg: #e8ecf2; --muted: #a2acbb; --line: #2b3340;
+  --link: #8ab4ff; --es: #ff8a7a; --eu: #8eaaff; --mundo: #5fd3c1; --rrhh: #c3a2ff; color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #12161d; --surface: #1a2029; --fg: #e8ecf2; --muted: #a2acbb; --line: #2b3340;
+  --link: #8ab4ff; --es: #ff8a7a; --eu: #8eaaff; --mundo: #5fd3c1; --rrhh: #c3a2ff; color-scheme: dark }
+
+body { background: var(--bg); color: var(--fg); font-family: var(--body); font-size: 16px; line-height: 1.55; padding: 0 16px; }
+.wrap { max-width: 680px; margin: 0 auto; padding-block: 28px 48px; display: grid; gap: 28px; }
+header { display: grid; gap: 6px; }
+.eyebrow { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-family: var(--display); font-weight: 600; font-size: clamp(26px, 6vw, 34px); line-height: 1.15; margin: 0; text-wrap: balance; }
+nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+nav a { font-size: 14px; font-weight: 600; text-decoration: none; padding: 4px 10px; border-radius: 999px; border: 1px solid var(--line); color: var(--fg); background: var(--surface); }
+nav a:focus-visible, a:focus-visible { outline: 2px solid var(--link); outline-offset: 2px; }
+section { display: grid; gap: 14px; }
+h2 { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; margin: 0; padding-left: 10px; border-left: 4px solid currentColor; }
+#es h2 { color: var(--es); } #eu h2 { color: var(--eu); } #mundo h2 { color: var(--mundo); } #rrhh h2 { color: var(--rrhh); }
+article { background: var(--surface); border: 1px solid var(--line); border-radius: 8px; padding: 14px 16px; display: grid; gap: 6px; min-width: 0; }
+article h3 { font-size: 17px; line-height: 1.35; margin: 0; text-wrap: balance; }
+article p { margin: 0; color: var(--muted); max-width: 65ch; }
+article a { font-size: 14px; font-weight: 600; color: var(--link); text-decoration: none; justify-self: start; }
+article a:hover { text-decoration: underline; }
+.vacio { color: var(--muted); font-style: italic; margin: 0; }
+footer { font-size: 13px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+footer a { color: var(--link); }
+</style>
+
+<div class="wrap">
+<!-- NOTICIAS:INICIO -->
+<header>
+  <div class="eyebrow">Radar IA · resumen diario</div>
+  <h1>Jueves, 8 de octubre de 2026</h1>
+  <nav aria-label="Secciones">
+    <a href="#es">España</a><a href="#eu">Europa</a><a href="#mundo">Mundo</a><a href="#rrhh">RRHH</a>
+  </nav>
+</header>
+
+<section id="es">
+  <h2>IA en España</h2>
+  <article>
+    <h3>Kompanion cierra su primera ronda para reinventar la gestoría empresarial con IA</h3>
+    <p>La startup barcelonesa ha cerrado unos 800.000 euros liderados por JME Ventures, con Acurio, BStartup de Banco Sabadell y business angels. Combina IA propia con asesores expertos para la gestión de pymes.</p>
+    <a href="https://elespanol.com/invertia/disruptores/ecosistema-startup/startups/20261005/jme-ventures-lidera-primera-ronda-kompanion-startup-reinventa-gestoria-empresarial-gracias-ia/1003744402783_0.html">El Español →</a>
+  </article>
+</section>
+
+<section id="eu">
+  <h2>IA en Europa</h2>
+  <p class="vacio">Sin novedades destacadas hoy.</p>
+</section>
+
+<section id="mundo">
+  <h2>IA en el mundo</h2>
+  <article>
+    <h3>OpenAI publica pruebas de cientos de problemas matemáticos abiertos resueltos por un modelo interno</h3>
+    <p>El 7 de octubre difundió en GitHub las demostraciones; según la cobertura, casi todas salieron de un único prompt a un agente, y hay críticos que piden que se publiquen los prompts.</p>
+    <a href="https://www.foxnews.com/live-news/open-ai-anthropic-us-tech-security-october-7">Fox News →</a>
+  </article>
+  <article>
+    <h3>Anthropic lanza Claude Haiku 5.5</h3>
+    <p>Según el agregador AI Weekly, llegó el 7 de octubre con un precio en torno a un 75 % inferior y créditos mensuales de API para suscriptores del plan Max.</p>
+    <a href="https://aiweekly.co/ai-news-today/anthropic-news">AI Weekly →</a>
+  </article>
+</section>
+
+<section id="rrhh">
+  <h2>IA que impacta en RRHH</h2>
+  <article>
+    <h3>Workday: la IA está reescribiendo los puestos más que recortándolos</h3>
+    <p>Su Global Workforce Report (5 de octubre) indica que la mayoría de los directivos no espera que la IA reduzca plantilla. Informe global, no específico de Europa.</p>
+    <a href="https://prnewswire.com/news-releases/workday-global-workforce-report-ai-is-rewriting-jobs-more-than-its-cutting-them-302898076.html">PR Newswire →</a>
+  </article>
+  <article>
+    <h3>Francia: cuándo consultar al comité de empresa antes de desplegar IA en RRHH</h3>
+    <p>Guía actualizada el 7 de octubre sobre el calendario del Reglamento de IA para herramientas de RRHH, con los sistemas de alto riesgo de empleo aplazados al 2 de diciembre de 2027 tras el Ómnibus Digital.</p>
+    <a href="https://actuia.com/en/news/when-to-consult-the-cse-before-deploying-ai-october-2026">ActuIA →</a>
+  </article>
+</section>
+
+<footer>Cada noticia enlaza a su fuente original. Se actualiza cada mañana; esta página muestra solo el resumen del día.</footer>
+<!-- NOTICIAS:FIN -->
+</div>
